@@ -58,70 +58,142 @@
         </div>
       </section>
       <section class="events">
-      <div >
-        <div class="events__header">
-          <div class="event__header">
-            <p class="event__header-title">Ближайшие заезды</p>
-            <p class="event__header-text">
-              Маршруты отсортированы по дате старта. Прошедшие остаются в афише.
-            </p>
-          </div>
-          <div class="event__stat">
-            <p class="event__stat-title">По ближайшей дате · 4 маршрута</p>
-          </div>
-        </div>
-
-        <div class="events__main">
-          <div class="ivents__cards">
-            <div class="ivent__card">
-              <div class="ivent__dates">
-                <div class="ivent__date">
-                  <p class="ivent__date-num">29</p>
-                  <p class="ivent__date-month">АВГ</p>
-                </div>
-                <div class="ivent__start">
-                  <img
-                    class="ivent__start-img"
-                    src="./img/Badgeicon.png"
-                    alt=""
-                  />
-                  <p class="ivent__start-text">БЛИЖАЙШИЙ</p>
-                </div>
-              </div>
-              <p class="ivent__title">Рассвет вдоль Яузы</p>
-              <p class="ivent__text">
-                Спокойный маршрут вдоль воды и парков. Утро без спешки.
+        <div>
+          <div class="events__header">
+            <div class="event__header">
+              <p class="event__header-title">Ближайшие заезды</p>
+              <p class="event__header-text">
+                Маршруты отсортированы по дате старта. Прошедшие остаются в
+                афише.
               </p>
-              <div class="ivent__level">
-                <img
-                  class="ivent__level-logo"
-                  src="./img/RouteIcon.png"
-                  alt=""
+            </div>
+            <div class="event__stat">
+              <p class="event__stat-title">По ближайшей дате · 4 маршрута</p>
+            </div>
+          </div>
+
+          <div class="events__main">
+            <div class="ivents__cards"></div>
+            <div class="ivents__add">
+              <div class="addroute">
+                <div class="addroute__card">
+                  <div class="addroute__add">
+                    <p class="addroute__add-plus">+</p>
+                  </div>
+                  <p class="addroute__card-title">Добавить маршрут</p>
+                </div>
+                <p class="addroute__text">
+                  Новая прогулка сохранится только в этом браузере.
+                </p>
+              </div>
+              <div class="nameroute">
+                <p class="nameroute__title inter650">Название маршрута</p>
+                <input
+                  class="nameroute__input input__dark"
+                  type="text"
+                  placeholder="Например, Рассвет вдоль Яузы"
                 />
-                <p class="ivent__level-title">24 км</p>
-                <div class="ivent__logos">
-                  <img
-                    class="ivent__logos-logo"
-                    src="./img/EasyIcon.png"
-                    alt=""
+                <p class="nameroute__text inter500">Минимум 3 символа</p>
+              </div>
+              <div class="info__route">
+                <div class="date__route">
+                  <p class="info__route-title inter650">Дата старта</p>
+                  <input
+                    class="info__route-input input__white"
+                    type="date"
+                    placeholder="дд.мм.гггг"
                   />
-                  <p class="ivent__logos-text">ЛЕГКО</p>
+                  <p class="info__route-text inter500">
+                    Формат: день · месяц · год
+                  </p>
+                </div>
+                <div class="distance__route">
+                  <p class="distance__route-title inter650">Дистанция, км</p>
+                  <input
+                    class="distance__route-input input__white"
+                    type="number"
+                    placeholder="0"
+                  />
+                  <p class="distance__route-text inter500">
+                    Только положительное число
+                  </p>
                 </div>
               </div>
-              <div class="ivent__adres">
-                <img
-                  class="ivent__adress-img"
-                  src="./img/RouteCardIcon.png"
-                  alt=""
+              <div class="level__route">
+                <p class="level__route-title inter650">Сложность</p>
+                <div class="level__cards">
+                <div class="level__card">
+                  <img
+                    class="level__card-img"
+                    src="./img/easyyIcon.png"
+                    alt=""
+                  />
+                  <p class="level__card-text">Легко</p>
+                </div>
+                <div class="level__card">
+                  <img
+                    class="level__card-img"
+                    src="./img/midleIcon.png"
+                    alt=""
+                  />
+                  <p class="level__card-text">Средне</p>
+                </div>
+                <div class="level__card">
+                  <img
+                    class="level__card-img"
+                    src="./img/hardIcon.png"
+                    alt=""
+                  />
+                  <p class="level__card-text">Сложно</p>
+                </div>
+                </div>
+                <p class="level__route-info inter500">
+                  Выберите темп и рельеф маршрута
+                </p>
+              </div>
+              <div class="point__route">
+                <p class="point__route-title inter650">Место старта</p>
+                <input
+                  class="point__route-input input__dark"
+                  type="text"
+                  placeholder="Например, у входа в парк"
                 />
-                <p class="ivent__adress">Ростокинский акведук</p>
+                <p class="point__route-info inter500">
+                  Укажите понятный ориентир
+                </p>
+              </div>
+              <div class="discription__route">
+                <p class="discription__route-title inter650">
+                  Короткое описание
+                </p>
+                <input
+                  class="discription__route-input"
+                  type="text"
+                  placeholder="Опишите темп, покрытие и важные детали маршрута."
+                />
+                <p class="discription__route-info inter500">До 240 символов</p>
+              </div>
+              <div class="btn__route">
+                <button class="btn btn__del">Очистить</button>
+                <button class="btn">Добавить</button>
+              </div>
+              <div class="route__info">
+                <div>
+                  <img
+                    class="route__info-logo"
+                    src="./img/PrivacyIcon.png"
+                    alt=""
+                  />
+                </div>
+                <p class="route__info-text">
+                  Данные хранятся локально и восстановятся после перезагрузки.
+                </p>
               </div>
             </div>
           </div>
-          <div class="ivents__add"></div>
         </div>
-      </div>
       </section>
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>

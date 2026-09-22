@@ -185,8 +185,17 @@
 }
 
 .events__main {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
   color: white;
   margin-top: 24px;
+}
+.ivents__cards {
+  width: 792px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 .ivent__card {
   display: flex;
@@ -299,4 +308,161 @@
 .ivent__adress-img {
   max-width: 16px;
   max-height: 16px;
+}
+
+.ivents__add {
+  max-width: 384px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #111714;
+  border: 1px solid #283630;
+  border-radius: 24px;
+  padding: 24px;
+}
+.addroute {
+  display: flex;
+  flex-direction: column;
+}
+.addroute__card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.addroute__add {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #173d2a;
+  border-radius: 12px;
+}
+.addroute__add-plus {
+  color: #62f59a;
+}
+.addroute__card-title {
+  color: #f2f7f4;
+  font-family: "Space grotesk";
+  font-size: 22px;
+  font-weight: 680;
+}
+.addroute__text {
+  color: #a4b3aa;
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+}
+.inter650 {
+  color: #f2f7f4;
+  font-family: "Inter";
+  font-size: 13px;
+  font-weight: 650;
+}
+.inter500 {
+  color: #6d7d74;
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 500;
+}
+.input__dark{
+  width: 336px;
+  background-color: #18211d;
+  color: #6d7d74;
+  border: 1px solid #3a4d43;
+  border-radius: 12px;
+  padding: 14px;
+}
+.nameroute{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.info__route{
+  display: flex;
+  gap: 12px;
+}
+.date__route{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.distance__route{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.input__white{
+  width: 162px;
+  height: 48px;
+  background-color: #18211d;
+  border: 1px solid #3a4d43;
+  border-radius: 12px;
+  color: #f2f7f4;
+  padding: 15px;
+}
+.level__route{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.level__cards{
+  display: flex;
+  gap: 8px;
+}
+.level__card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  width: 107px;
+  height: 48px;
+  background-color: #18211d;
+  border: 1px solid #3a4d43;
+  border-radius: 12px;
+  color: #a4b3aa;
+  font-size: 12px;
+  font-weight: 650;
+}
+.level__card-img{
+  width: 17px;
+  height: 17px;
+}
+.point__route{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.discription__route{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.discription__route-input{
+  width: 336px;
+  height: 112px;
+  background-color: #18211d;
+  border: 1px solid #3a4d43;
+  border-radius: 12px;
+  color: #f2f7f4;
+  font-size: 15px;
+  font-weight: 400;
+}
+.btn__route{
+  display: flex;
+  gap: 10px;
+}
+.btn__del{
+  background-color: #1e2924;
+  color: #f2f7f4;
+}
+.route__info{
+  display: flex;
+  gap: 8px;
+  background-color: #0b0f0d;
+  border-radius: 12px;
+  color: #6d7d74;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 12px;
 }
