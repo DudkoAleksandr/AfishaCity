@@ -1,4 +1,11 @@
 const eventsBlock = document.querySelector(".ivents__cards");
+const routeName = document.querySelector(".nameroute__input");
+const startPoint = document.querySelector(".point__route-input");
+const shortDescription = document.querySelector(".discription__route-input");
+const btnAddRoute = document.querySelector(".btn__route-add");
+const routeDistance = document.querySelector(".distance__route-input");
+const routeDate = document.querySelector(".info__route-input");
+const levelBlock = document.querySelector(".level__cards");
 
 const routes = [
   {
@@ -9,41 +16,13 @@ const routes = [
     level: "easy",
     start: "Ростовский акв",
     text: "Спокойный",
-    status: "Ближайший",
-  },
-  {
-    id: 1,
-    date: "2026-09-22",
-    name: "Рассвет1",
-    distance: "24 1",
-    level: "easy 1",
-    start: "Ростовский акв 1",
-    text: "Спокойный 1",
-    status: "Ближайший1",
-  },
-  {
-    id: 1,
-    date: "2026-09-22",
-    name: "Рассвет2",
-    distance: "24 2",
-    level: "easy 2",
-    start: "Ростовский акв 2",
-    text: "Спокойный 2",
-    status: "Ближайший2",
-  },
-  {
-    id: 1,
-    date: "2026-09-22",
-    name: "Рассвет3",
-    distance: "24 3",
-    level: "easy 3",
-    start: "Ростовский акв 3",
-    text: "Спокойный 3",
-    status: "Ближайший3",
+    // status: "Ближайший",
   },
 ];
 
+
 function render() {
+  eventsBlock.innerHTML = null
   for (let route of routes) {
     const html = `
                     <div class="ivent__card">
@@ -58,7 +37,7 @@ function render() {
                     src="./img/Badgeicon.png"
                     alt=""
                   />
-                  <p class="ivent__start-text">${route.status}</p>
+                  <p class="ivent__start-text">Ближайший</p>
                 </div>
               </div>
               <p class="ivent__title">${route.name}</p>
@@ -108,3 +87,27 @@ function render() {
   }
 }
 render();
+
+btnAddRoute.addEventListener('click', () => {
+  const newRoute = {
+    id: crypto.randomUUID(),
+    date: routeDate.value,
+    name: routeName.value,
+    distance: routeDistance.value,
+    level: "easy",
+    start: startPoint.value,
+    text: shortDescription.value,
+  };
+  routes.push(newRoute)
+  render()
+
+  
+  console.log(routes)
+})
+
+levelBlock.addEventListener('click', (event) => {
+  if (event.target.classList.contains("easy") || event.target.parentElement.classList.contains('easy')) {
+    console.log('easy');
+  }
+
+})

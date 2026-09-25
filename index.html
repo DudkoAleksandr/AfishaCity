@@ -24,6 +24,7 @@
     </header>
     <main>
       <section class="main">
+        <div class="container">
         <div class="hero">
           <div class="hero__card">
             <p class="hero__subtitle">АФИША · МОСКВА · ВЫХОДНЫЕ</p>
@@ -37,7 +38,7 @@
                 <span>+</span>
                 <span>Добавить маршрут</span>
               </button>
-              <button>Смотреть заезды</button>
+              <button><a href="#events">Смотреть заезды</a></button>
             </div>
             <div class="hero__stats">
               <div class="hero__stat">
@@ -56,9 +57,10 @@
           </div>
           <div class="hero__logos"></div>
         </div>
+        </div>
       </section>
-      <section class="events">
-        <div>
+      <section class="events" id="events">
+        <div class="container">
           <div class="events__header">
             <div class="event__header">
               <p class="event__header-title">Ближайшие заезды</p>
@@ -122,7 +124,7 @@
               <div class="level__route">
                 <p class="level__route-title inter650">Сложность</p>
                 <div class="level__cards">
-                  <div class="level__card">
+                  <div class="level__card easy">
                     <img
                       class="level__card-img"
                       src="./img/easyyIcon.png"
@@ -130,7 +132,7 @@
                     />
                     <p class="level__card-text">Легко</p>
                   </div>
-                  <div class="level__card">
+                  <div class="level__card midle">
                     <img
                       class="level__card-img"
                       src="./img/midleIcon.png"
@@ -138,7 +140,7 @@
                     />
                     <p class="level__card-text">Средне</p>
                   </div>
-                  <div class="level__card">
+                  <div class="level__card hard">
                     <img
                       class="level__card-img"
                       src="./img/hardIcon.png"
@@ -175,7 +177,7 @@
               </div>
               <div class="btn__route">
                 <button class="btn btn__del">Очистить</button>
-                <button class="btn">Добавить</button>
+                <button class="btn__route-add btn">Добавить</button>
               </div>
               <div class="route__info">
                 <div>

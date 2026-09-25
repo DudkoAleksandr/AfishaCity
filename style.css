@@ -10,6 +10,9 @@ a{
 .body {
   background-color: #0b0f0d;
 }
+.container{
+  width: 1200px;
+}
 
 .btn {
   display: flex;
@@ -78,7 +81,6 @@ a{
 }
 
 .hero {
-  max-width: 1200px;
   display: flex;
   margin-top: 40px;
   border-radius: 32px;
@@ -157,7 +159,6 @@ a{
 }
 .events__header {
   display: flex;
-  width: 1200px;
   justify-content: space-between;
 }
 .event__header {
@@ -358,6 +359,7 @@ a{
   font-family: "Inter";
   font-size: 12px;
   font-weight: 400;
+  margin-top: 7px;
 }
 .inter650 {
   color: #f2f7f4;
