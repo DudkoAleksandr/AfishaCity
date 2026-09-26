@@ -38,7 +38,10 @@
                 <span>+</span>
                 <span>Добавить маршрут</span>
               </button>
-              <button><a href="#events">Смотреть заезды</a></button>
+              <button class="hero__buttons-btn">
+                <img src="./img/Button!GhostIcon.png" alt="">
+                <a class="hero__buttons-btn-text" href="#events">Смотреть заезды</a>
+              </button>
             </div>
             <div class="hero__stats">
               <div class="hero__stat">
@@ -55,7 +58,12 @@
               </div>
             </div>
           </div>
-          <div class="hero__logos"></div>
+          <div class="hero__logos">
+            <div class="hero__date">
+              <img class="hero__date-logo" src="./img/DesktopHeroVisualTagIcon.png" alt="">
+              <p class="hero__date-text">Следующий старт · 29 августа</p>
+            </div>
+          </div>
         </div>
         </div>
       </section>
@@ -70,6 +78,7 @@
               </p>
             </div>
             <div class="event__stat">
+              <img src="./img/DesktopSortChipIcon.png" alt="">
               <p class="event__stat-title">По ближайшей дате · 4 маршрута</p>
             </div>
           </div>
@@ -89,7 +98,7 @@
                 </p>
               </div>
               <div class="nameroute">
-                <p class="nameroute__title inter650">Название маршрута</p>
+                <p class="nameroute__title inter650">Название маршрута <span class="nameroute__required">*</span></p>
                 <input
                   class="nameroute__input input__dark"
                   type="text"
@@ -99,7 +108,7 @@
               </div>
               <div class="info__route">
                 <div class="date__route">
-                  <p class="info__route-title inter650">Дата старта</p>
+                  <p class="info__route-title inter650">Дата старта<span class="nameroute__required">*</span></p>
                   <input
                     class="info__route-input input__white"
                     type="date"
@@ -110,7 +119,7 @@
                   </p>
                 </div>
                 <div class="distance__route">
-                  <p class="distance__route-title inter650">Дистанция, км</p>
+                  <p class="distance__route-title inter650">Дистанция, км<span class="nameroute__required">*</span></p>
                   <input
                     class="distance__route-input input__white"
                     type="number"
@@ -154,7 +163,7 @@
                 </p>
               </div>
               <div class="point__route">
-                <p class="point__route-title inter650">Место старта</p>
+                <p class="point__route-title inter650">Место старта<span class="nameroute__required">*</span></p>
                 <input
                   class="point__route-input input__dark"
                   type="text"

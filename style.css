@@ -3,14 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-a{
+a {
   text-decoration: none;
   color: white;
 }
 .body {
   background-color: #0b0f0d;
 }
-.container{
+.container {
   width: 1200px;
 }
 
@@ -93,6 +93,14 @@ a{
   display: flex;
   flex-direction: column;
   gap: 22px;
+  background: linear-gradient(
+    100deg,
+    #10160f 0%,
+    #131c19 40%,
+    #16211d 65%,
+    #1d2e26 100%
+  );
+  border-radius: 32px 0 0 32px;
 }
 .hero__subtitle {
   color: #62f59a;
@@ -118,6 +126,22 @@ a{
 .hero__buttons {
   display: flex;
   gap: 12px;
+}
+.hero__buttons-btn {
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 194px;
+}
+.hero__buttons-btn-text {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #a4b3aa;
 }
 
 .hero__stats {
@@ -150,6 +174,31 @@ a{
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 0 24px 24px 0;
+  position: relative;
+}
+.hero__date {
+  width: 217px;
+  height: 36px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #3a4d43;
+  background-color: #0b0f0de6;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+}
+.hero__date-logo{
+  width: 16px;
+  height: 16px;
+}
+.hero__date-text {
+  color: #f2f7f4;
+  font-family: "Inter";
+  font-size: 11px;
+  font-weight: 650;
 }
 
 .events {
@@ -179,7 +228,16 @@ a{
   font-weight: 400;
 }
 .event__stat {
+  width: 231px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   align-self: flex-end;
+  background-color: #111714;
+  border: 1px solid #283630;
+  border-radius: 10px;
 }
 .event__stat-title {
   color: #a4b3aa;
@@ -373,7 +431,7 @@ a{
   font-size: 12px;
   font-weight: 500;
 }
-.input__dark{
+.input__dark {
   width: 336px;
   background-color: #18211d;
   color: #6d7d74;
@@ -381,26 +439,30 @@ a{
   border-radius: 12px;
   padding: 14px;
 }
-.nameroute{
+.nameroute {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.info__route{
+.nameroute__required{
+  color: #62f59a;
+  margin-left: 4px;
+}
+.info__route {
   display: flex;
   gap: 12px;
 }
-.date__route{
+.date__route {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.distance__route{
+.distance__route {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.input__white{
+.input__white {
   width: 162px;
   height: 48px;
   background-color: #18211d;
@@ -409,16 +471,16 @@ a{
   color: #f2f7f4;
   padding: 15px;
 }
-.level__route{
+.level__route {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.level__cards{
+.level__cards {
   display: flex;
   gap: 8px;
 }
-.level__card{
+.level__card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -432,21 +494,21 @@ a{
   font-size: 12px;
   font-weight: 650;
 }
-.level__card-img{
+.level__card-img {
   width: 17px;
   height: 17px;
 }
-.point__route{
+.point__route {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.discription__route{
+.discription__route {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.discription__route-input{
+.discription__route-input {
   width: 336px;
   height: 112px;
   background-color: #18211d;
@@ -456,15 +518,15 @@ a{
   font-size: 15px;
   font-weight: 400;
 }
-.btn__route{
+.btn__route {
   display: flex;
   gap: 10px;
 }
-.btn__del{
+.btn__del {
   background-color: #1e2924;
   color: #f2f7f4;
 }
-.route__info{
+.route__info {
   display: flex;
   gap: 8px;
   background-color: #0b0f0d;
@@ -474,19 +536,19 @@ a{
   font-weight: 400;
   padding: 12px;
 }
-.card__change{
+.card__change {
   display: flex;
   gap: 8px;
   width: 344px;
   border-top: 1px solid #283630;
   color: #a4b3aa;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 14px;
   font-weight: 700;
   color: white;
   padding-top: 14px;
 }
-.card__correct{
+.card__correct {
   display: flex;
   gap: 8px;
   width: 296px;
@@ -494,7 +556,7 @@ a{
   justify-content: center;
   align-items: center;
 }
-.card__del{
+.card__del {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -504,10 +566,10 @@ a{
   border: 1px solid #3a4d43;
   border-radius: 12px;
 }
-.card__del-img{
+.card__del-img {
   width: 20px;
   height: 20px;
 }
-.card__correct-text{
+.card__correct-text {
   color: #a4b3aa;
 }
