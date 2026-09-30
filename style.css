@@ -494,6 +494,19 @@ a {
   font-size: 12px;
   font-weight: 650;
 }
+.level__card.easy.activ{
+  background-color: #173d2a;
+  color: #62f59a;
+}
+.level__card.hard.activ{
+  background-color: #3b171d;
+  color: #ff6b77;
+}
+.level__card.midle.activ{
+  background-color: #3b2e12;
+  color: #f5c85f;
+}
+
 .level__card-img {
   width: 17px;
   height: 17px;

@@ -20,16 +20,24 @@ const routes = [
   },
 ];
 
-
 function render() {
-  eventsBlock.innerHTML = null
+  eventsBlock.innerHTML = null;
   for (let route of routes) {
+    
+      let date = new Date(route.date);
+      let formatDay = new Intl.DateTimeFormat("ru", {
+        day: "numeric",
+      }).format(date);
+      let formatMonth = new Intl.DateTimeFormat("ru", {
+        month: "short",
+      }).format(date).toUpperCase();
+
     const html = `
                     <div class="ivent__card">
               <div class="ivent__dates">
                 <div class="ivent__date">
-                  <p class="ivent__date-num">29</p>
-                  <p class="ivent__date-month">АВГ</p>
+                  <p class="ivent__date-num">${formatDay}</p>
+                  <p class="ivent__date-month">${formatMonth.slice(0, formatMonth.length - 1)}</p>
                 </div>
                 <div class="ivent__start">
                   <img
@@ -88,7 +96,7 @@ function render() {
 }
 render();
 
-btnAddRoute.addEventListener('click', () => {
+btnAddRoute.addEventListener("click", () => {
   const newRoute = {
     id: crypto.randomUUID(),
     date: routeDate.value,
@@ -98,16 +106,23 @@ btnAddRoute.addEventListener('click', () => {
     start: startPoint.value,
     text: shortDescription.value,
   };
-  routes.push(newRoute)
-  render()
+  routes.push(newRoute);
+  render();
 
-  
-  console.log(routes)
-})
+});
 
-levelBlock.addEventListener('click', (event) => {
-  if (event.target.classList.contains("easy") || event.target.parentElement.classList.contains('easy')) {
-    console.log('easy');
+levelBlock.addEventListener("click", (event) => {
+  // if (
+  //   event.target.classList.contains("easy") ||
+  //   event.target.parentElement.classList.contains("easy")
+  // ) {
+  //   event.target.classList.add("easygreen");
+  //   console.log(event.target);
+  // }
+  const levelCard = event.target.closest('.level__card');
+  const levelCards = document.querySelectorAll('.level__card')
+  for(let card of levelCards){
+    card.classList.remove("activ");
   }
-
-})
+  levelCard.classList.add("activ");
+});
