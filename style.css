@@ -10,6 +10,7 @@ a {
 .body {
   background-color: #0b0f0d;
 }
+
 .container {
   width: 1200px;
 }
@@ -190,7 +191,7 @@ a {
   bottom: 24px;
   left: 24px;
 }
-.hero__date-logo{
+.hero__date-logo {
   width: 16px;
   height: 16px;
 }
@@ -444,7 +445,7 @@ a {
   flex-direction: column;
   gap: 8px;
 }
-.nameroute__required{
+.nameroute__required {
   color: #62f59a;
   margin-left: 4px;
 }
@@ -494,15 +495,15 @@ a {
   font-size: 12px;
   font-weight: 650;
 }
-.level__card.easy.activ{
+.level__card.easy.activ {
   background-color: #173d2a;
   color: #62f59a;
 }
-.level__card.hard.activ{
+.level__card.hard.activ {
   background-color: #3b171d;
   color: #ff6b77;
 }
-.level__card.midle.activ{
+.level__card.midle.activ {
   background-color: #3b2e12;
   color: #f5c85f;
 }
@@ -585,4 +586,11 @@ a {
 }
 .card__correct-text {
   color: #a4b3aa;
+}
+
+.error-input {
+  border: 1px solid #ff6b77;
+}
+.error-text {
+  color: #ff6b77;
 }

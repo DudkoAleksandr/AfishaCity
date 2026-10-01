@@ -6,6 +6,10 @@ const btnAddRoute = document.querySelector(".btn__route-add");
 const routeDistance = document.querySelector(".distance__route-input");
 const routeDate = document.querySelector(".info__route-input");
 const levelBlock = document.querySelector(".level__cards");
+const nameRout = document.querySelector(".nameroute__text");
+const dateRout = document.querySelector(".info__route-text");
+const distanceRout = document.querySelector(".distance__route-text");
+const pointRout = document.querySelector(".point__route-info");
 
 const routes = [
   {
@@ -23,14 +27,15 @@ const routes = [
 function render() {
   eventsBlock.innerHTML = null;
   for (let route of routes) {
-    
-      let date = new Date(route.date);
-      let formatDay = new Intl.DateTimeFormat("ru", {
-        day: "numeric",
-      }).format(date);
-      let formatMonth = new Intl.DateTimeFormat("ru", {
-        month: "short",
-      }).format(date).toUpperCase();
+    let date = new Date(route.date);
+    let formatDay = new Intl.DateTimeFormat("ru", {
+      day: "numeric",
+    }).format(date);
+    let formatMonth = new Intl.DateTimeFormat("ru", {
+      month: "short",
+    })
+      .format(date)
+      .toUpperCase();
 
     const html = `
                     <div class="ivent__card">
@@ -106,9 +111,40 @@ btnAddRoute.addEventListener("click", () => {
     start: startPoint.value,
     text: shortDescription.value,
   };
-  routes.push(newRoute);
-  render();
 
+  if (routeName.value.length < 3) {
+    nameRout.innerHTML = "Введите не меньше 3 символов.";
+    nameRout.classList.add("error-text");
+    routeName.classList.add("error-input");
+  } else {
+    nameRout.innerHTML = "Минимум 3 символа";
+    nameRout.classList.remove("error-text");
+    routeName.classList.remove("error-input");
+  }
+  if (Number(routeDistance.value) < 0) {
+    distanceRout.innerHTML = "Укажите дистанцию больше 0 км.";
+    distanceRout.classList.add("error-text");
+    routeDistance.classList.add("error-input");
+  } else {
+    distanceRout.innerHTML = "Только положительное число";
+    distanceRout.classList.remove("error-text");
+    routeDistance.classList.remove("error-input");
+  }
+  if(startPoint.value === ''){
+        pointRout.innerHTML = "Укажите место старта.";
+        pointRout.classList.add("error-text");
+        startPoint.classList.add("error-input");
+  } else{
+        pointRout.innerHTML = "Укажите понятный ориентир";
+        pointRout.classList.remove("error-text");
+        startPoint.classList.remove("error-input");
+  }
+        routes.push(newRoute);
+        render();
+
+  // if (routeDate.value === " ") {
+  //   console.log("date");
+  // }
 });
 
 levelBlock.addEventListener("click", (event) => {
@@ -119,9 +155,10 @@ levelBlock.addEventListener("click", (event) => {
   //   event.target.classList.add("easygreen");
   //   console.log(event.target);
   // }
-  const levelCard = event.target.closest('.level__card');
-  const levelCards = document.querySelectorAll('.level__card')
-  for(let card of levelCards){
+
+  const levelCard = event.target.closest(".level__card");
+  const levelCards = document.querySelectorAll(".level__card");
+  for (let card of levelCards) {
     card.classList.remove("activ");
   }
   levelCard.classList.add("activ");
