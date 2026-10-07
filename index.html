@@ -25,46 +25,54 @@
     <main>
       <section class="main">
         <div class="container">
-        <div class="hero">
-          <div class="hero__card">
-            <p class="hero__subtitle">АФИША · МОСКВА · ВЫХОДНЫЕ</p>
-            <p class="hero__title">Город ближе, когда едешь вместе</p>
-            <p class="hero__text">
-              Открытые велопрогулки по выходным. Выберите маршрут по дате,
-              дистанции и темпу — регистрация не нужна.
-            </p>
-            <div class="hero__buttons">
-              <a href="#ivents__add"><button class="btn">
-                <span>+</span>
-                <span>Добавить маршрут</span>
-              </button></a>
-              <button class="hero__buttons-btn">
-                <img src="./img/Button!GhostIcon.png" alt="">
-                <a class="hero__buttons-btn-text" href="#events">Смотреть заезды</a>
-              </button>
+          <div class="hero">
+            <div class="hero__card">
+              <p class="hero__subtitle">АФИША · МОСКВА · ВЫХОДНЫЕ</p>
+              <p class="hero__title">Город ближе, когда едешь вместе</p>
+              <p class="hero__text">
+                Открытые велопрогулки по выходным. Выберите маршрут по дате,
+                дистанции и темпу — регистрация не нужна.
+              </p>
+              <div class="hero__buttons">
+                <a href="#ivents__add"
+                  ><button class="btn">
+                    <span>+</span>
+                    <span>Добавить маршрут</span>
+                  </button></a
+                >
+                <button class="hero__buttons-btn">
+                  <img src="./img/Button!GhostIcon.png" alt="" />
+                  <a class="hero__buttons-btn-text" href="#events"
+                    >Смотреть заезды</a
+                  >
+                </button>
+              </div>
+              <div class="hero__stats">
+                <div class="hero__stat">
+                  <p class="hero__stat-title">3</p>
+                  <p class="hero__stat-text">ближайших</p>
+                </div>
+                <div class="hero__stat">
+                  <p class="hero__stat-title">18-52</p>
+                  <p class="hero__stat-text">километра</p>
+                </div>
+                <div class="hero__stat">
+                  <p class="hero__stat-title">local</p>
+                  <p class="hero__stat-text">в этом браузере</p>
+                </div>
+              </div>
             </div>
-            <div class="hero__stats">
-              <div class="hero__stat">
-                <p class="hero__stat-title">3</p>
-                <p class="hero__stat-text">ближайших</p>
-              </div>
-              <div class="hero__stat">
-                <p class="hero__stat-title">18-52</p>
-                <p class="hero__stat-text">километра</p>
-              </div>
-              <div class="hero__stat">
-                <p class="hero__stat-title">local</p>
-                <p class="hero__stat-text">в этом браузере</p>
+            <div class="hero__logos">
+              <div class="hero__date">
+                <img
+                  class="hero__date-logo"
+                  src="./img/DesktopHeroVisualTagIcon.png"
+                  alt=""
+                />
+                <p class="hero__date-text">Следующий старт · 29 августа</p>
               </div>
             </div>
           </div>
-          <div class="hero__logos">
-            <div class="hero__date">
-              <img class="hero__date-logo" src="./img/DesktopHeroVisualTagIcon.png" alt="">
-              <p class="hero__date-text">Следующий старт · 29 августа</p>
-            </div>
-          </div>
-        </div>
         </div>
       </section>
       <section class="events" id="events">
@@ -78,7 +86,7 @@
               </p>
             </div>
             <div class="event__stat">
-              <img src="./img/DesktopSortChipIcon.png" alt="">
+              <img src="./img/DesktopSortChipIcon.png" alt="" />
               <p class="event__stat-title">По ближайшей дате · 4 маршрута</p>
             </div>
           </div>
@@ -98,7 +106,9 @@
                 </p>
               </div>
               <div class="nameroute">
-                <p class="nameroute__title inter650">Название маршрута <span class="nameroute__required">*</span></p>
+                <p class="nameroute__title inter650">
+                  Название маршрута <span class="nameroute__required">*</span>
+                </p>
                 <input
                   class="nameroute__input input__dark"
                   type="text"
@@ -108,7 +118,9 @@
               </div>
               <div class="info__route">
                 <div class="date__route">
-                  <p class="info__route-title inter650">Дата старта<span class="nameroute__required">*</span></p>
+                  <p class="info__route-title inter650">
+                    Дата старта<span class="nameroute__required">*</span>
+                  </p>
                   <input
                     class="info__route-input input__white"
                     type="date"
@@ -119,7 +131,9 @@
                   </p>
                 </div>
                 <div class="distance__route">
-                  <p class="distance__route-title inter650">Дистанция, км<span class="nameroute__required">*</span></p>
+                  <p class="distance__route-title inter650">
+                    Дистанция, км<span class="nameroute__required">*</span>
+                  </p>
                   <input
                     class="distance__route-input input__white"
                     type="number"
@@ -133,7 +147,7 @@
               <div class="level__route">
                 <p class="level__route-title inter650">Сложность</p>
                 <div class="level__cards">
-                  <div class="level__card easy">
+                  <div class="level__card easy activ">
                     <img
                       class="level__card-img"
                       src="./img/easyyIcon.png"
@@ -163,7 +177,9 @@
                 </p>
               </div>
               <div class="point__route">
-                <p class="point__route-title inter650">Место старта<span class="nameroute__required">*</span></p>
+                <p class="point__route-title inter650">
+                  Место старта<span class="nameroute__required">*</span>
+                </p>
                 <input
                   class="point__route-input input__dark"
                   type="text"
@@ -174,9 +190,15 @@
                 </p>
               </div>
               <div class="discription__route">
-                <p class="discription__route-title inter650">
-                  Короткое описание
-                </p>
+                <div class="route-title">
+                  <p class="discription__route-title inter650">
+                    Короткое описание
+                  </p>
+                  <div class="route-title">
+                  <p class="route__title-symbol">0</p>
+                  <p>/ 240</p>
+                  </div>
+                </div>
                 <input
                   class="discription__route-input"
                   type="text"

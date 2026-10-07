@@ -10,6 +10,10 @@ const nameRout = document.querySelector(".nameroute__text");
 const dateRout = document.querySelector(".info__route-text");
 const distanceRout = document.querySelector(".distance__route-text");
 const pointRout = document.querySelector(".point__route-info");
+const maxSymbol = document.querySelector(".route__title-symbol");
+const delRout = document.querySelector(".btn__del");
+
+let selectedLevel = "Легко";
 
 const routes = [
   {
@@ -88,7 +92,7 @@ function render() {
                     src="./img/GhostIcon.png"
                     alt=""
                   />
-                  <a href=""><p class="card__correct-text">Редактировать</p></a>
+                  <button id='${route.id}'><p class="card__correct-text">Редактировать</p></button>
                 </div>
                 <div class="card__del">
                   <img class="card__del-img" src="./img/IconGlyph.png" alt="" />
@@ -98,7 +102,10 @@ function render() {
         `;
     eventsBlock.insertAdjacentHTML("beforeend", html);
   }
+  const btnChange = document.querySelectorAll(".card__correct-text");
+  console.log(btnChange);
 }
+
 render();
 
 btnAddRoute.addEventListener("click", () => {
@@ -107,15 +114,18 @@ btnAddRoute.addEventListener("click", () => {
     date: routeDate.value,
     name: routeName.value,
     distance: routeDistance.value,
-    level: "easy",
+    level: selectedLevel,
     start: startPoint.value,
     text: shortDescription.value,
   };
+
+  let error = false;
 
   if (routeName.value.length < 3) {
     nameRout.innerHTML = "Введите не меньше 3 символов.";
     nameRout.classList.add("error-text");
     routeName.classList.add("error-input");
+    error = true;
   } else {
     nameRout.innerHTML = "Минимум 3 символа";
     nameRout.classList.remove("error-text");
@@ -125,26 +135,39 @@ btnAddRoute.addEventListener("click", () => {
     distanceRout.innerHTML = "Укажите дистанцию больше 0 км.";
     distanceRout.classList.add("error-text");
     routeDistance.classList.add("error-input");
+    error = true;
   } else {
     distanceRout.innerHTML = "Только положительное число";
     distanceRout.classList.remove("error-text");
     routeDistance.classList.remove("error-input");
   }
-  if(startPoint.value === ''){
-        pointRout.innerHTML = "Укажите место старта.";
-        pointRout.classList.add("error-text");
-        startPoint.classList.add("error-input");
-  } else{
-        pointRout.innerHTML = "Укажите понятный ориентир";
-        pointRout.classList.remove("error-text");
-        startPoint.classList.remove("error-input");
+  if (startPoint.value === "") {
+    pointRout.innerHTML = "Укажите место старта.";
+    pointRout.classList.add("error-text");
+    startPoint.classList.add("error-input");
+    error = true;
+  } else {
+    pointRout.innerHTML = "Укажите понятный ориентир";
+    pointRout.classList.remove("error-text");
+    startPoint.classList.remove("error-input");
   }
-        routes.push(newRoute);
-        render();
+  if (routeDate.value === "") {
+    dateRout.innerHTML = "Выберите дату старта.";
+    dateRout.classList.add("error-text");
+    routeDate.classList.add("error-input");
+    error = true;
+    console.log("date");
+  } else {
+    pointRout.innerHTML = "Формат: день · месяц · год";
+    pointRout.classList.remove("error-text");
+    routeDate.classList.remove("error-input");
+  }
+  // maxSymbol = shortDescription.value.length
 
-  // if (routeDate.value === " ") {
-  //   console.log("date");
-  // }
+  if (error === false) {
+    routes.push(newRoute);
+    render();
+  }
 });
 
 levelBlock.addEventListener("click", (event) => {
@@ -162,4 +185,27 @@ levelBlock.addEventListener("click", (event) => {
     card.classList.remove("activ");
   }
   levelCard.classList.add("activ");
+  if (levelCard.classList.contains("easy")) {
+    selectedLevel = "Легко";
+  } else if (levelCard.classList.contains("hard")) {
+    selectedLevel = "Сложно";
+  } else if (levelCard.classList.contains("midle")) {
+    selectedLevel = "Средне";
+  }
+});
+
+shortDescription.addEventListener("input", () => {
+  maxSymbol.innerHTML = shortDescription.value.length;
+});
+
+delRout.addEventListener("click", () => {
+  routeName.value = null;
+  routeDate.value = null;
+  routeDistance.value = null;
+  startPoint.value = null;
+  shortDescription.value = null;
+  maxSymbol.innerHTML = 0
+  if(selectedLevel === 'Сложно'){
+    selectedLevel = 'Легко'
+  }
 });

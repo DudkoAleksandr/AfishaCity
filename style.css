@@ -594,3 +594,12 @@ a {
 .error-text {
   color: #ff6b77;
 }
+
+.route-title {
+  display: flex;
+  justify-content: space-between;
+}
+.route-title-symbole {
+  display: flex;
+  gap: 5px;
+}
