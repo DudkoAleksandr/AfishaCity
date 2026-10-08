@@ -199,16 +199,14 @@ delRout.addEventListener("click", () => {
   startPoint.value = null;
   shortDescription.value = null;
   maxSymbol.innerHTML = 0
+
   const levelCard = document.querySelectorAll(".level__card");
   for(let level of levelCard){
-    if (level.classList.value == "active") {
-      level.classList.remove("active");
+    if (level.classList.contains('activ')) {
+      level.classList.remove("activ");
     }
-    console.log(level.classList.value)
+    if (level.classList.contains("easy")){
+      level.classList.add("activ");
+    } 
   }
-  // console.log(levelCard)
-  // if(selectedLevel === 'Сложно'){
-  //   selectedLevel = 'Легко'
-  // }
-
 });
