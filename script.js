@@ -171,16 +171,10 @@ btnAddRoute.addEventListener("click", () => {
 });
 
 levelBlock.addEventListener("click", (event) => {
-  // if (
-  //   event.target.classList.contains("easy") ||
-  //   event.target.parentElement.classList.contains("easy")
-  // ) {
-  //   event.target.classList.add("easygreen");
-  //   console.log(event.target);
-  // }
 
   const levelCard = event.target.closest(".level__card");
   const levelCards = document.querySelectorAll(".level__card");
+
   for (let card of levelCards) {
     card.classList.remove("activ");
   }
@@ -205,7 +199,16 @@ delRout.addEventListener("click", () => {
   startPoint.value = null;
   shortDescription.value = null;
   maxSymbol.innerHTML = 0
-  if(selectedLevel === 'Сложно'){
-    selectedLevel = 'Легко'
+  const levelCard = document.querySelectorAll(".level__card");
+  for(let level of levelCard){
+    if (level.classList.value == "active") {
+      level.classList.remove("active");
+    }
+    console.log(level.classList.value)
   }
+  // console.log(levelCard)
+  // if(selectedLevel === 'Сложно'){
+  //   selectedLevel = 'Легко'
+  // }
+
 });
