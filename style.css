@@ -370,6 +370,7 @@ a {
 .ivent__adres {
   display: flex;
   gap: 7px;
+  color: #A4B3AA;
 }
 .ivent__adress-img {
   max-width: 16px;
@@ -385,6 +386,9 @@ a {
   border: 1px solid #283630;
   border-radius: 24px;
   padding: 24px;
+}
+.ivents__add-red{
+  border: 1px solid #FF6B77;
 }
 .addroute {
   display: flex;
@@ -403,9 +407,6 @@ a {
   align-items: center;
   background-color: #173d2a;
   border-radius: 12px;
-}
-.addroute__add-plus {
-  color: #62f59a;
 }
 .addroute__card-title {
   color: #f2f7f4;
@@ -435,7 +436,7 @@ a {
 .input__dark {
   width: 336px;
   background-color: #18211d;
-  color: #6d7d74;
+  color: #F2F7F4;
   border: 1px solid #3a4d43;
   border-radius: 12px;
   padding: 14px;
@@ -523,6 +524,7 @@ a {
   gap: 8px;
 }
 .discription__route-input {
+  padding: 14px;
   width: 336px;
   height: 112px;
   background-color: #18211d;
@@ -585,7 +587,10 @@ a {
   height: 20px;
 }
 .card__correct-text {
-  color: #a4b3aa;
+  color: #A4B3AA;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .error-input {
@@ -598,8 +603,39 @@ a {
 .route-title {
   display: flex;
   justify-content: space-between;
+  color: #6D7D74;
 }
 .route-title-symbole {
   display: flex;
   gap: 5px;
+}
+
+.ivent__change{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.redact__card {
+  width: 123px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: #1E2924;
+  border: 1px solid #62F59A;
+  border-radius: 10px;
+}
+.redact__logo {
+  max-width: 14px;
+  max-height: 14px;
+}
+.redact__text {
+  color: #62f59a;
+  font-family: "Inter";
+  font-size: 11px;
+  font-weight: 700;
+}
+.none{
+  display: none;
 }
