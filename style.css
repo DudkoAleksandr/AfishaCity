@@ -370,7 +370,7 @@ a {
 .ivent__adres {
   display: flex;
   gap: 7px;
-  color: #A4B3AA;
+  color: #a4b3aa;
 }
 .ivent__adress-img {
   max-width: 16px;
@@ -387,8 +387,11 @@ a {
   border-radius: 24px;
   padding: 24px;
 }
-.ivents__add-red{
-  border: 1px solid #FF6B77;
+.ivents__add-red {
+  border: 1px solid #ff6b77;
+}
+.ivents__add-green {
+  border: 1px solid #62f59a;
 }
 .addroute {
   display: flex;
@@ -436,7 +439,7 @@ a {
 .input__dark {
   width: 336px;
   background-color: #18211d;
-  color: #F2F7F4;
+  color: #f2f7f4;
   border: 1px solid #3a4d43;
   border-radius: 12px;
   padding: 14px;
@@ -537,10 +540,22 @@ a {
 .btn__route {
   display: flex;
   gap: 10px;
+  position: relative;
 }
 .btn__del {
   background-color: #1e2924;
   color: #f2f7f4;
+}
+.btn__position-del {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+}
+.btn__position-right {
+  position: absolute;
+  top: 14px;
+  right: 125px;
+  color: #173d2a;
 }
 .route__info {
   display: flex;
@@ -587,7 +602,7 @@ a {
   height: 20px;
 }
 .card__correct-text {
-  color: #A4B3AA;
+  color: #a4b3aa;
   background: none;
   border: none;
   cursor: pointer;
@@ -603,14 +618,14 @@ a {
 .route-title {
   display: flex;
   justify-content: space-between;
-  color: #6D7D74;
+  color: #6d7d74;
 }
 .route-title-symbole {
   display: flex;
   gap: 5px;
 }
 
-.ivent__change{
+.ivent__change {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -622,8 +637,8 @@ a {
   justify-content: center;
   align-items: center;
   gap: 6px;
-  background: #1E2924;
-  border: 1px solid #62F59A;
+  background: #1e2924;
+  border: 1px solid #62f59a;
   border-radius: 10px;
 }
 .redact__logo {
@@ -636,6 +651,15 @@ a {
   font-size: 11px;
   font-weight: 700;
 }
-.none{
+.none {
   display: none;
+}
+
+.position__icon {
+  position: relative;
+}
+.position__icon-img {
+  position: absolute;
+  right: 20px;
+  top: 14px;
 }

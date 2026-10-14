@@ -15,3 +15,4 @@ const delRout = document.querySelector(".btn__del");
 const addRouteTitle = document.querySelector(".addroute__card-title");
 const addRouteLogo = document.querySelector(".addroute__logo");
 const addRouteBlock = document.querySelector(".ivents__add");
+const addRouteSubTitle = document.querySelector(".addroute__text");

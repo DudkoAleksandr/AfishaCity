@@ -84,16 +84,29 @@ function render() {
 
 function editRoute() {
   const btnsChange = document.querySelectorAll(".card__correct-text");
+  const eventCard = document.querySelector(".ivent__card");
   for (let btnChange of btnsChange) {
     btnChange.addEventListener("click", () => {
       for (let route of routes) {
         if (btnChange.id === route.id) {
-          console.log(route);
           addRouteTitle.innerHTML = "Редактировать маршрут";
           routeName.value = route.name;
+          routeDate.value = route.date;
+          routeDistance.value = route.distance;
+          startPoint.value = route.start;
+          shortDescription.value = route.text;
+          maxSymbol.innerHTML = route.text.length;
+          selectedLevel = route.level;
+          addRouteLogo.src = "./img/EditingIcon.png";
+          addRouteSubTitle.innerHTML =
+            "Измените данные и сохраните запись без создания дубликата.";
           btnAddRoute.innerHTML = "Сохранить";
+          delRout.innerHTML = "Отменить";
           btnAddRoute.classList.add("safe");
-          console.log(routeName);
+          const redactCard = document.querySelector(".redact__card");
+          redactCard.classList.remove("none");
+          addRouteBlock.classList.add("ivents__add-green");
+          eventCard.classList.add("ivents__add-green");
         }
       }
     });

@@ -97,7 +97,7 @@
               <div class="addroute">
                 <div class="addroute__card">
                   <div class="addroute__add">
-                    <img class="addroute__logo" src="./img/plus.png" alt="">
+                    <img class="addroute__logo" src="./img/plus.png" alt="" />
                   </div>
                   <p class="addroute__card-title">Добавить маршрут</p>
                 </div>
@@ -109,11 +109,18 @@
                 <p class="nameroute__title inter650">
                   Название маршрута <span class="nameroute__required">*</span>
                 </p>
-                <input
-                  class="nameroute__input input__dark"
-                  type="text"
-                  placeholder="Например, Рассвет вдоль Яузы"
-                />
+                <div class="position__icon">
+                  <input
+                    class="nameroute__input input__dark"
+                    type="text"
+                    placeholder="Например, Рассвет вдоль Яузы"
+                  />
+                  <img
+                    class="position__icon-img"
+                    src="./img/InputDefault.png"
+                    alt=""
+                  />
+                </div>
                 <p class="nameroute__text inter500">Минимум 3 символа</p>
               </div>
               <div class="info__route">
@@ -121,11 +128,18 @@
                   <p class="info__route-title inter650">
                     Дата старта<span class="nameroute__required">*</span>
                   </p>
-                  <input
-                    class="info__route-input input__white"
-                    type="date"
-                    placeholder="дд.мм.гггг"
-                  />
+                  <div class="position__icon">
+                    <input
+                      class="info__route-input input__white"
+                      type="date"
+                      placeholder="дд.мм.гггг"
+                    />
+                    <img
+                      class="position__icon-img"
+                      src="./img/Input!Date.png"
+                      alt=""
+                    />
+                  </div>
                   <p class="info__route-text inter500">
                     Формат: день · месяц · год
                   </p>
@@ -134,11 +148,18 @@
                   <p class="distance__route-title inter650">
                     Дистанция, км<span class="nameroute__required">*</span>
                   </p>
-                  <input
-                    class="distance__route-input input__white"
-                    type="number"
-                    placeholder="0"
-                  />
+                  <div class="position__icon">
+                    <input
+                      class="distance__route-input input__white"
+                      type="number"
+                      placeholder="0"
+                    />
+                    <img
+                      class="position__icon-img"
+                      src="./img/Input!Number.png"
+                      alt=""
+                    />
+                  </div>
                   <p class="distance__route-text inter500">
                     Только положительное число
                   </p>
@@ -180,11 +201,18 @@
                 <p class="point__route-title inter650">
                   Место старта<span class="nameroute__required">*</span>
                 </p>
-                <input
-                  class="point__route-input input__dark"
-                  type="text"
-                  placeholder="Например, у входа в парк"
-                />
+                <div class="position__icon">
+                  <input
+                    class="point__route-input input__dark"
+                    type="text"
+                    placeholder="Например, у входа в парк"
+                  />
+                  <img
+                    class="position__icon-img"
+                    src="./img/Input!Place.png"
+                    alt=""
+                  />
+                </div>
                 <p class="point__route-info inter500">
                   Укажите понятный ориентир
                 </p>
@@ -199,12 +227,25 @@
                     <p>/ 240</p>
                   </div>
                 </div>
-                <textarea class="discription__route-input" placeholder="Опишите темп, покрытие и важные детали маршрута."></textarea>
+                <textarea
+                  class="discription__route-input"
+                  placeholder="Опишите темп, покрытие и важные детали маршрута."
+                ></textarea>
                 <p class="discription__route-info inter500">До 240 символов</p>
               </div>
               <div class="btn__route">
                 <button class="btn btn__del">Очистить</button>
+                <img
+                  class="btn__position-del"
+                  src="./img/Button!del.png"
+                  alt=""
+                />
                 <button class="btn__route-add btn">Добавить</button>
+                <img
+                  class="btn__position-right"
+                  src="./img/Button!Plus.png"
+                  alt=""
+                />
               </div>
               <div class="route__info">
                 <div>
@@ -228,4 +269,3 @@
     <script src="./script.js"></script>
   </body>
 </html>
-

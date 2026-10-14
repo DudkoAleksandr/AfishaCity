@@ -17,9 +17,9 @@ render();
 
 btnAddRoute.addEventListener("click", () => {
   if (!btnAddRoute.classList.contains("safe")) {
-    addRoute()
+    addRoute();
     render();
-  } 
+  }
 });
 
 levelBlock.addEventListener("click", (event) => {
@@ -41,9 +41,9 @@ levelBlock.addEventListener("click", (event) => {
 
 shortDescription.addEventListener("input", () => {
   maxSymbol.innerHTML = shortDescription.value.length;
-  if(shortDescription.value.length >= 240){
-    shortDescription.value = shortDescription.value.slice(0, 240)
-    alert('меньше символов')
+  if (shortDescription.value.length >= 240) {
+    shortDescription.value = shortDescription.value.slice(0, 240);
+    alert("меньше символов");
   }
 });
 
