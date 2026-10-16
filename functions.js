@@ -82,31 +82,41 @@ function render() {
   editRoute();
 }
 
+function editForm(route) {
+  addRouteTitle.innerHTML = "Редактировать маршрут";
+  routeName.value = route.name;
+  routeDate.value = route.date;
+  routeDistance.value = route.distance;
+  startPoint.value = route.start;
+  shortDescription.value = route.text;
+  maxSymbol.innerHTML = route.text.length;
+  selectedLevel = route.level;
+  addRouteLogo.src = "./img/EditingIcon.png";
+  addRouteSubTitle.innerHTML =
+    "Измените данные и сохраните запись без создания дубликата.";
+  btnAddRoute.innerHTML = "Сохранить";
+  delRout.innerHTML = "Отменить";
+  btnAddRoute.classList.add("safe");
+  imgBtnAdd.src = "./img/Button!PrimaryIcon.png";
+  imgBtnDel.src = "./img/Button!SecondaryIcon.png";
+  addRouteBlock.classList.add("ivents__add-green");
+}
+
 function editRoute() {
   const btnsChange = document.querySelectorAll(".card__correct-text");
-  const eventCard = document.querySelector(".ivent__card");
-  for (let btnChange of btnsChange) {
+  const eventCards = document.querySelectorAll(".ivent__card");
+  const redactCards = document.querySelectorAll(".redact__card");
+
+  for (let i = 0; i < btnsChange.length; i++) {
+    let btnChange = btnsChange[i];
     btnChange.addEventListener("click", () => {
+      console.log(i);
+
       for (let route of routes) {
         if (btnChange.id === route.id) {
-          addRouteTitle.innerHTML = "Редактировать маршрут";
-          routeName.value = route.name;
-          routeDate.value = route.date;
-          routeDistance.value = route.distance;
-          startPoint.value = route.start;
-          shortDescription.value = route.text;
-          maxSymbol.innerHTML = route.text.length;
-          selectedLevel = route.level;
-          addRouteLogo.src = "./img/EditingIcon.png";
-          addRouteSubTitle.innerHTML =
-            "Измените данные и сохраните запись без создания дубликата.";
-          btnAddRoute.innerHTML = "Сохранить";
-          delRout.innerHTML = "Отменить";
-          btnAddRoute.classList.add("safe");
-          const redactCard = document.querySelector(".redact__card");
-          redactCard.classList.remove("none");
-          addRouteBlock.classList.add("ivents__add-green");
-          eventCard.classList.add("ivents__add-green");
+          editForm(route);
+          redactCards[i].classList.remove("none");
+          eventCards[i].classList.add("ivents__add-green");
         }
       }
     });
@@ -131,6 +141,7 @@ function addRoute() {
     addRouteLogo.src = "./img/CreateIcon.png";
     addRouteBlock.classList.add("ivents__add-red");
     btnAddRoute.innerHTML = "Исправить";
+    imgBtnAdd.src = "./img/Button!Primary.png";
     nameRout.innerHTML = "Введите не меньше 3 символов.";
     nameRout.classList.add("error-text");
     routeName.classList.add("error-input");
@@ -145,6 +156,7 @@ function addRoute() {
     addRouteLogo.src = "./img/CreateIcon.png";
     addRouteBlock.classList.add("ivents__add-red");
     btnAddRoute.innerHTML = "Исправить";
+    imgBtnAdd.src = "./img/Button!Primary.png";
 
     distanceRout.innerHTML = "Укажите дистанцию больше 0 км.";
     distanceRout.classList.add("error-text");
@@ -160,6 +172,7 @@ function addRoute() {
     addRouteLogo.src = "./img/CreateIcon.png";
     addRouteBlock.classList.add("ivents__add-red");
     btnAddRoute.innerHTML = "Исправить";
+    imgBtnAdd.src = "./img/Button!Primary.png";
 
     pointRout.innerHTML = "Укажите место старта.";
     pointRout.classList.add("error-text");
@@ -175,6 +188,7 @@ function addRoute() {
     addRouteLogo.src = "./img/CreateIcon.png";
     addRouteBlock.classList.add("ivents__add-red");
     btnAddRoute.innerHTML = "Исправить";
+    imgBtnAdd.src = "./img/Button!Primary.png";
 
     dateRout.innerHTML = "Выберите дату старта.";
     dateRout.classList.add("error-text");
@@ -193,5 +207,6 @@ function addRoute() {
     btnAddRoute.innerHTML = "Добавить";
 
     routes.push(newRoute);
+    console.log(routes);
   }
 }

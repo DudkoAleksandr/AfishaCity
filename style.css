@@ -663,3 +663,9 @@ a {
   right: 20px;
   top: 14px;
 }
+
+.info__route-input{
+  background-image: url('./img/Input!Date.png');
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+}

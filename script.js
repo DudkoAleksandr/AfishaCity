@@ -6,7 +6,27 @@ const routes = [
     date: "2026-09-22",
     name: "Рассвет",
     distance: "24",
-    level: "easy",
+    level: "Легко",
+    start: "Ростовский акв",
+    text: "Спокойный",
+    // status: "Ближайший",
+  },
+  {
+    id: "2",
+    date: "2026-09-22",
+    name: "Рассвет2",
+    distance: "24",
+    level: "Сложно",
+    start: "Ростовский акв",
+    text: "Спокойный",
+    // status: "Ближайший",
+  },
+  {
+    id: "3",
+    date: "2026-09-22",
+    name: "Рассвет3",
+    distance: "24",
+    level: "Средне",
     start: "Ростовский акв",
     text: "Спокойный",
     // status: "Ближайший",
@@ -41,7 +61,7 @@ levelBlock.addEventListener("click", (event) => {
 
 shortDescription.addEventListener("input", () => {
   maxSymbol.innerHTML = shortDescription.value.length;
-  if (shortDescription.value.length >= 240) {
+  if (shortDescription.value.length > 240) {
     shortDescription.value = shortDescription.value.slice(0, 240);
     alert("меньше символов");
   }
