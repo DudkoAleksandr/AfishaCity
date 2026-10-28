@@ -71,7 +71,7 @@ function render() {
                   />
                   <button class="card__correct-text" id='${route.id}'>Редактировать</button>
                 </div>
-                <div class="card__del">
+                <div data-id='${route.id}' class="card__del">
                   <img class="card__del-img" src="./img/IconGlyph.png" alt="" />
                 </div>
               </div>
@@ -80,8 +80,27 @@ function render() {
     eventsBlock.insertAdjacentHTML("beforeend", html);
   }
   editRoute();
+  deliteRoute();
+  filterRoute.innerHTML = `По ближайшей дате · ${routes.length} маршрута`;
 }
-
+function deliteRoute() {
+  const btnsDelRoute = document.querySelectorAll(".card__del");
+  for (let btnDelRoute of btnsDelRoute) {
+    btnDelRoute.addEventListener("click", () => {
+      for (let i = 0; i < routes.length; i++) {
+        if (routes[i].id == btnDelRoute.dataset.id) {
+          routes.splice(i, 1);
+          render();
+          localStorage.setItem("routes", JSON.stringify(routes));
+        }
+      }
+    });
+  }
+}
+function resetForm() {
+  addRouteBlock.reset();
+  addRouteTitle.innerHTML = "Добавить маршрут";
+}
 function editForm(route) {
   addRouteTitle.innerHTML = "Редактировать маршрут";
   routeName.value = route.name;
@@ -100,6 +119,32 @@ function editForm(route) {
   imgBtnAdd.src = "./img/Button!PrimaryIcon.png";
   imgBtnDel.src = "./img/Button!SecondaryIcon.png";
   addRouteBlock.classList.add("ivents__add-green");
+  console.log(selectedLevel);
+  const levelCards = document.querySelectorAll(".level__card");
+  for (let level of levelCards) {
+    if (selectedLevel === "Сложно") {
+      selectedLevels = "hard";
+      if (level.classList.contains(selectedLevels)) {
+        level.classList.add("activ");
+      } else {
+        level.classList.remove("activ");
+      }
+    } else if (selectedLevel === "Легко") {
+      selectedLevels = "easy";
+      if (level.classList.contains(selectedLevels)) {
+        level.classList.add("activ");
+      } else {
+        level.classList.remove("activ");
+      }
+    } else if (selectedLevel === "Средне") {
+      selectedLevels = "midle";
+      if (level.classList.contains(selectedLevels)) {
+        level.classList.add("activ");
+      } else {
+        level.classList.remove("activ");
+      }
+    }
+  }
 }
 
 function editRoute() {
@@ -110,10 +155,10 @@ function editRoute() {
   for (let i = 0; i < btnsChange.length; i++) {
     let btnChange = btnsChange[i];
     btnChange.addEventListener("click", () => {
-      console.log(i);
-
       for (let route of routes) {
         if (btnChange.id === route.id) {
+          editRouteId = route.id;
+
           editForm(route);
           redactCards[i].classList.remove("none");
           eventCards[i].classList.add("ivents__add-green");
@@ -207,6 +252,6 @@ function addRoute() {
     btnAddRoute.innerHTML = "Добавить";
 
     routes.push(newRoute);
-    console.log(routes);
+    localStorage.setItem("routes", JSON.stringify(routes));
   }
 }

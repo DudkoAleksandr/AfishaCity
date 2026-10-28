@@ -1,9 +1,9 @@
 let selectedLevel = "Легко";
 
-const routes = [
+const startRoutes = [
   {
     id: "1",
-    date: "2026-09-22",
+    date: "2026-10-22",
     name: "Рассвет",
     distance: "24",
     level: "Легко",
@@ -23,7 +23,7 @@ const routes = [
   },
   {
     id: "3",
-    date: "2026-09-22",
+    date: "2026-06-22",
     name: "Рассвет3",
     distance: "24",
     level: "Средне",
@@ -32,13 +32,27 @@ const routes = [
     // status: "Ближайший",
   },
 ];
+let routes = JSON.parse(localStorage.getItem("routes")) || startRoutes;
+console.log(routes)
+let editRouteId = null;
 
 render();
 
-btnAddRoute.addEventListener("click", () => {
+btnAddRoute.addEventListener("click", (event) => {
+  event.preventDefault();
   if (!btnAddRoute.classList.contains("safe")) {
     addRoute();
     render();
+  } else {
+    for (let route of routes) {
+      if (route.id == editRouteId) {
+        route.name = routeName.value;
+        console.log(routeName.value);
+        btnAddRoute.classList.remove("safe");
+        resetForm();
+        render();
+      }
+    }
   }
 });
 
@@ -67,14 +81,12 @@ shortDescription.addEventListener("input", () => {
   }
 });
 
-delRout.addEventListener("click", () => {
-  routeName.value = null;
-  routeDate.value = null;
-  routeDistance.value = null;
-  startPoint.value = null;
-  shortDescription.value = null;
+delRout.addEventListener("click", (event) => {
+  event.preventDefault();
+  addRouteBlock.reset();
   maxSymbol.innerHTML = 0;
   selectedLevel = "Легко";
+  addRouteBlock.classList.add("ivents__add-green");
 
   const levelCard = document.querySelectorAll(".level__card");
   for (let level of levelCard) {
@@ -86,3 +98,4 @@ delRout.addEventListener("click", () => {
     }
   }
 });
+
