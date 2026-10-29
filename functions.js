@@ -79,6 +79,7 @@ function render() {
         `;
     eventsBlock.insertAdjacentHTML("beforeend", html);
   }
+
   editRoute();
   deliteRoute();
   filterRoute.innerHTML = `По ближайшей дате · ${routes.length} маршрута`;
@@ -119,7 +120,6 @@ function editForm(route) {
   imgBtnAdd.src = "./img/Button!PrimaryIcon.png";
   imgBtnDel.src = "./img/Button!SecondaryIcon.png";
   addRouteBlock.classList.add("ivents__add-green");
-  console.log(selectedLevel);
   const levelCards = document.querySelectorAll(".level__card");
   for (let level of levelCards) {
     if (selectedLevel === "Сложно") {
@@ -151,10 +151,14 @@ function editRoute() {
   const btnsChange = document.querySelectorAll(".card__correct-text");
   const eventCards = document.querySelectorAll(".ivent__card");
   const redactCards = document.querySelectorAll(".redact__card");
-
   for (let i = 0; i < btnsChange.length; i++) {
     let btnChange = btnsChange[i];
+
     btnChange.addEventListener("click", () => {
+      for (let eventCard of eventCards) {
+        eventCard.classList.remove("ivents__add-green");
+      }
+
       for (let route of routes) {
         if (btnChange.id === route.id) {
           editRouteId = route.id;

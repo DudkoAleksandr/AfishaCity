@@ -33,7 +33,6 @@ const startRoutes = [
   },
 ];
 let routes = JSON.parse(localStorage.getItem("routes")) || startRoutes;
-console.log(routes)
 let editRouteId = null;
 
 render();
