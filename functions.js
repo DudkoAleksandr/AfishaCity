@@ -1,4 +1,5 @@
 function render() {
+  // sortRoute();
   eventsBlock.innerHTML = null;
   for (let route of routes) {
     let date = new Date(route.date);
@@ -258,4 +259,12 @@ function addRoute() {
     routes.push(newRoute);
     localStorage.setItem("routes", JSON.stringify(routes));
   }
+}
+
+function sortRoute() {
+  for (let route of routes) {
+    let date = new Date(route.date).getTime();
+    route.dateNumber = date;
+  }
+  routes.sort((a, b) => a.dateNumber - b.dateNumber);
 }

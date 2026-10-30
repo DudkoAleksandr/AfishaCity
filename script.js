@@ -46,7 +46,8 @@ btnAddRoute.addEventListener("click", (event) => {
     for (let route of routes) {
       if (route.id == editRouteId) {
         route.name = routeName.value;
-        console.log(routeName.value);
+        route.date = routeDate.value
+        console.log(typeof routeDate.value, route.date)
         btnAddRoute.classList.remove("safe");
         resetForm();
         render();
@@ -97,4 +98,3 @@ delRout.addEventListener("click", (event) => {
     }
   }
 });
-
