@@ -41,19 +41,12 @@ btnAddRoute.addEventListener("click", (event) => {
   event.preventDefault();
   if (!btnAddRoute.classList.contains("safe")) {
     addRoute();
-    render();
   } else {
     for (let route of routes) {
-      if (route.id == editRouteId) {
-        route.name = routeName.value;
-        route.date = routeDate.value
-        console.log(typeof routeDate.value, route.date)
-        btnAddRoute.classList.remove("safe");
-        resetForm();
-        render();
-      }
+      safeEditRoute(route);
     }
   }
+  render()
 });
 
 levelBlock.addEventListener("click", (event) => {
@@ -71,6 +64,7 @@ levelBlock.addEventListener("click", (event) => {
   } else if (levelCard.classList.contains("midle")) {
     selectedLevel = "Средне";
   }
+  console.log(selectedLevel);
 });
 
 shortDescription.addEventListener("input", () => {

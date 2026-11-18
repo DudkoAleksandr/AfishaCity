@@ -669,3 +669,14 @@ a {
   background-repeat: no-repeat;
   background-position: right 20px center;
 }
+.info__route-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  filter: none;
+  opacity: 0;
+  cursor: pointer;
+}

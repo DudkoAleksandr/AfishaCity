@@ -268,3 +268,15 @@ function sortRoute() {
   }
   routes.sort((a, b) => a.dateNumber - b.dateNumber);
 }
+
+function safeEditRoute(route) {
+  if (route.id == editRouteId) {
+    route.name = routeName.value;
+    route.date = routeDate.value;
+    route.distance = routeDistance.value;
+    route.level = selectedLevel;
+    btnAddRoute.classList.remove("safe");
+    resetForm();
+    localStorage.setItem("routes", JSON.stringify(routes));
+  }
+}
