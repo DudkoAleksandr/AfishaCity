@@ -91,6 +91,7 @@ function deliteRoute() {
     btnDelRoute.addEventListener("click", () => {
       for (let i = 0; i < routes.length; i++) {
         if (routes[i].id == btnDelRoute.dataset.id) {
+          alert('ТОчно удалить?')
           routes.splice(i, 1);
           render();
           localStorage.setItem("routes", JSON.stringify(routes));
@@ -171,6 +172,7 @@ function editRoute() {
       }
     });
   }
+  resetForm();
 }
 
 function addRoute() {
@@ -275,8 +277,19 @@ function safeEditRoute(route) {
     route.date = routeDate.value;
     route.distance = routeDistance.value;
     route.level = selectedLevel;
+    route.start = startPoint.value;
+    route.text = shortDescription.value;
     btnAddRoute.classList.remove("safe");
     resetForm();
+    addRouteSubTitle.innerHTML =
+      "Новая прогулка сохранится только в этом браузере.";
+    btnAddRoute.innerHTML = "Добавить";
+    imgBtnAdd.src = "./img/Button!Plus.png";
+    addRouteLogo.src = "./img/plus.png";
+    delRout.innerHTML = "Очистить";
+    imgBtnDel.src = "./img/Button!del.png";
+    addRouteBlock.classList.remove("ivents__add-green");
+  
     localStorage.setItem("routes", JSON.stringify(routes));
   }
 }
